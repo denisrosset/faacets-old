@@ -1,0 +1,6 @@
+[submodule "faacets"]
+	path = faacets-core
+	url = git@github.com:denisrosset/faacets-core.git
+[submodule "alasc"]
+	path = alasc
+	url = git@github.com:denisrosset/alasc.git
