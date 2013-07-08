@@ -4,3 +4,6 @@
 [submodule "alasc"]
 	path = alasc
 	url = git@github.com:denisrosset/alasc.git
+[submodule "data"]
+	path = data
+	url = git@github.com:denisrosset/faacets-data.git
