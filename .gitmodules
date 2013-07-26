@@ -7,3 +7,6 @@
 [submodule "data"]
 	path = data
 	url = git@github.com:denisrosset/faacets-data.git
+[submodule "polyta"]
+	path = polyta
+	url = git@github.com:denisrosset/polyta.git
