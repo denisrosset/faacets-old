@@ -10,7 +10,10 @@ object FaacetsRootBuild extends Build {
   )
 
   lazy val root = Project(id = "faacets-root",
-    base = file(".")) aggregate(faacetsCore, polyta, alasc)
+    base = file(".")) aggregate(faacetsMatlab, faacetsCore, polyta, alasc)
+
+  lazy val faacetsMatlab = Project(id = "faacets-matlab",
+    base = file("faacets-matlab")) dependsOn(faacetsCore, alasc, polyta)
 
   lazy val faacetsCore = Project(id = "faacets-core",
     base = file("faacets-core")) dependsOn(alasc, polyta)
