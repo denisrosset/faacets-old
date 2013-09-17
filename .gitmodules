@@ -10,3 +10,6 @@
 [submodule "polyta"]
 	path = polyta
 	url = git@github.com:denisrosset/polyta.git
+[submodule "faacets-matlab"]
+	path = faacets-matlab
+	url = git@github.com:jdbancal/faacets-matlab.git
