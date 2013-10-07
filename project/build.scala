@@ -6,7 +6,7 @@ object FaacetsRootBuild extends Build {
     organization := "com.faacets",
     version := "0.1",
     
-    scalaVersion in ThisBuild := "2.10.1"
+    scalaVersion in ThisBuild := "2.10.3"
   )
 
   lazy val root = Project(id = "faacets-root",
