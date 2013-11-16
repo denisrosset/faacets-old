@@ -1,5 +1,6 @@
 import sbt._
 import Keys._
+import sbtassembly.Plugin.AssemblyKeys._
 
 object FaacetsRootBuild extends Build {
   override def settings = super.settings ++ Seq(
@@ -8,6 +9,8 @@ object FaacetsRootBuild extends Build {
     
     scalaVersion in ThisBuild := "2.10.3"
   )
+
+  def standardSettings = Defaults.defaultSettings
 
   lazy val root = Project(id = "faacets-root",
     base = file(".")) aggregate(faacetsFamilies, faacetsMatlab, faacetsCore, polyta, alasc)
@@ -19,7 +22,12 @@ object FaacetsRootBuild extends Build {
     base = file("faacets-matlab")) dependsOn(faacetsCore, alasc, polyta)
 
   lazy val faacetsCore = Project(id = "faacets-core",
-    base = file("faacets-core")) dependsOn(alasc, polyta)
+    base = file("faacets-core"), //com.github.retronym
+    settings = standardSettings ++ sbtassembly.Plugin.assemblySettings ++ Seq(
+      excludedJars in assembly <<= (fullClasspath in assembly) map {
+        _.filter( cp => Seq("scalacheck_2.10-1.10.0.jar", "test-interface-0.5.jar", "scalatest_2.10-1.9.1.jar", "scala-reflect.jar", "scala-actors-2.10.0.jar").contains(cp.data.getName))
+      })
+  ) dependsOn(alasc, polyta)
 
   lazy val polyta = Project(id = "polyta",
     base = file("polyta")) dependsOn(alasc)
