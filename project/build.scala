@@ -1,6 +1,7 @@
 import sbt._
 import Keys._
 import sbtassembly.Plugin.AssemblyKeys._
+import laughedelic.literator.plugin.LiteratorPlugin._
 
 object FaacetsRootBuild extends Build {
   override def settings = super.settings ++ Seq(
@@ -23,7 +24,7 @@ object FaacetsRootBuild extends Build {
 
   lazy val faacetsCore = Project(id = "faacets-core",
     base = file("faacets-core"), //com.github.retronym
-    settings = standardSettings ++ sbtassembly.Plugin.assemblySettings ++ Seq(
+    settings = standardSettings ++ literatorSettings ++ sbtassembly.Plugin.assemblySettings ++ Seq(
       excludedJars in assembly <<= (fullClasspath in assembly) map {
         _.filter( cp => Seq("scalacheck_2.10-1.10.0.jar", "test-interface-0.5.jar", "scalatest_2.10-1.9.1.jar", "scala-reflect.jar", "scala-actors-2.10.0.jar").contains(cp.data.getName))
       })
