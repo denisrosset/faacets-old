@@ -1,7 +1,7 @@
 import sbt._
 import Keys._
 import sbtassembly.Plugin.AssemblyKeys._
-import laughedelic.literator.plugin.LiteratorPlugin._
+import com.faacets.literator.plugin.LiteratorPlugin._
 
 object FaacetsRootBuild extends Build {
   override def settings = super.settings ++ Seq(
@@ -10,6 +10,8 @@ object FaacetsRootBuild extends Build {
     
     scalaVersion in ThisBuild := "2.10.3"
   )
+
+  val sampleIntTask = TaskKey[Int]("sampleInt", "demo key A")
 
   def standardSettings = Defaults.defaultSettings
 
