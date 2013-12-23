@@ -19,6 +19,7 @@ Base Header Level:  1
 LaTeX Mode:         memoir  
 latex input:        mmd-article-begin-doc
 latex footer:       mmd-memoir-footer
+
 """
 
   implicit class FileLiterator(root: File) {

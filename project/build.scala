@@ -11,8 +11,6 @@ object FaacetsRootBuild extends Build {
     scalaVersion in ThisBuild := "2.10.3"
   )
 
-  val sampleIntTask = TaskKey[Int]("sampleInt", "demo key A")
-
   def standardSettings = Defaults.defaultSettings
 
   lazy val root = Project(id = "faacets-root",
@@ -36,5 +34,5 @@ object FaacetsRootBuild extends Build {
     base = file("polyta")) dependsOn(alasc)
 
   lazy val alasc = Project(id = "alasc",
-    base = file("alasc"))
+    base = file("alasc"), settings = standardSettings ++ literatorSettings)
 }
