@@ -14,13 +14,10 @@ object FaacetsRootBuild extends Build {
   def standardSettings = Defaults.defaultSettings
 
   lazy val root = Project(id = "faacets-root",
-    base = file(".")) aggregate(faacetsFamilies, faacetsMatlab, faacetsCore, polyta, alasc)
+    base = file(".")) aggregate(faacetsFamilies, faacetsCore, polyta, alasc)
 
   lazy val faacetsFamilies = Project(id = "faacets-families",
     base = file("faacets-families")) dependsOn(faacetsCore, alasc, polyta)
-
-  lazy val faacetsMatlab = Project(id = "faacets-matlab",
-    base = file("faacets-matlab")) dependsOn(faacetsCore, alasc, polyta)
 
   lazy val faacetsCore = Project(id = "faacets-core",
     base = file("faacets-core"), //com.github.retronym
