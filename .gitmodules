@@ -13,3 +13,6 @@
 [submodule "faacets-matlab"]
 	path = faacets-matlab
 	url = git@github.com:jdbancal/faacets-matlab.git
+[submodule "faacets-sources"]
+	path = faacets-sources
+	url = ./faacets-sources
