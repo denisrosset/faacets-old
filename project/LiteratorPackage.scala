@@ -13,6 +13,9 @@ package object lib {
 """HTML header:  <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.5/styles/default.min.css">
+    <script src="http://yandex.st/highlightjs/7.5/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 latex input:        mmd-article-header
 Title:              Literate documentation 
 Base Header Level:  1
